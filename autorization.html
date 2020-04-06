@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>amoCRM: Авторизация</title>
+    <link rel="stylesheet" href="https://st1.amocrm.ru/frontend/build/app.css?89be41afbd2237a370deca52aacb14e9dbaf3f91b907f9240984ce896fbb60e4">
+    <link rel="stylesheet" href="/frontend/stylesheets/common/auth.css">
+    <link rel="stylesheet" href="css/settings.css">
+<!--    <script src="https://st1.amocrm.ru/frontend/build/amocrm.js?8eef7c91b6f4a8888b3e84af05adc8468a8daf5b346e311904622b93ab0fa465"></script>-->
+<!--    <script>-->
+<!--        AMOCRM.constant('version', 'fe962c98e2e2a2e083c84f926c81e996');-->
+<!--        AMOCRM.addStartupModule('lib/core/auth/index');-->
+<!--    </script>-->
+<!--    <script type="text/javascript" src="https://st1.amocrm.ru/frontend/build/vendor.js?5fea27e9a81fea3a07c448ee78478f0926e588bcd1fd76cf1afcf0f43b374e08"></script>-->
+</head>
+
+<body >
+<div class="auth_form_wrapper auth__login-form 1 ">
+    <div class="auth_form" id="authentication">
+
+        <input type="hidden" name="csrf_token" value="def502001bc83939b48b2b6877a52d25ebc049cd85ef863742f4478d196bcbe94c732e0f637361679cdeac3635f2e9f38f81e91f52dced830cf95918918084f42508077f79224c75796c7b949853eaf1fc5cd6f05cd844c09423757ff78281dc37d79a27dd5db151b31cce3a5d366c8106d5b44911d69b1f930eaa4004c05dfae1c57c1f90d552ac14f9fbc0a19956770ac20552673dc04d1bd44327ae1838e275f72976585fa53d0ef054dd866a4cf9bdbd41636f4dc3c527d0419793055f3cc6309aafe0b98a03c6b7f9c744ee1ed73fd67c38affa7fd6fdeef6d87180d4d3e74f616daa19baf1d5e1b98bedca2f9f5028c01c20551eed965887d3f4ff3a1155c064c5fca6da9b3fad8a">
+        <div class="auth_form__field_wrapper">
+					<span class="custom_input__wrapper">
+						<span class="icon icon-user"></span>
+						<input type="text" class="custom_input" id="session_end_login" name="username" placeholder="Логин" value=""/>
+					</span>
+        </div>
+
+        <div class="auth_form__field_wrapper">
+					<span class="custom_input__wrapper">
+						<span class="icon icon-lock"></span>
+						<input id="password" name="password" type="password" class="custom_input" placeholder="Пароль" style="width:77%" />
+						<div class="auth_form__forgot_password" tabindex="100000">Забыли?</div>
+					</span>
+        </div>
+
+        <div class="auth_form__error hidden" id="error_auth"></div>
+
+        <div class="auth_form__field_wrapper auth_form__field_wrapper-buttons">
+            <button type="submit" class="auth_form__submit" id="auth_submit">Войти</button>
+
+            <a class="auth_form__register" href="//www.amocrm.ru/account/">Регистрация</a>
+        </div>
+
+        <div class="auth_form__field_wrapper">
+            <div class="control-checkbox icon icon-checkbox"><input type="checkbox" name="temporary_auth" id="USER_REMEMBER" value="N" />
+                <ins class="control-checkbox__helper"></ins>
+            </div>
+
+            <input id="USER_REMEMBER_HELPER" type="hidden" name="temporary_auth" value="N">
+            <label for="USER_REMEMBER" class="icon-checkbox-label" class="auth_lable">Чужой компьютер</label>
+        </div>
+    </div>
+
+    <a href="//www.amocrm.ru">
+        <img src="/frontend/images/interface/i/amocrm.png" alt="" style="position: absolute; bottom: 37px; left: 50%; margin-left: -39px;" />
+    </a>
+</div>
+<div class="auth_form_wrapper auth__forgot-form hidden">
+    <div class="auth_form">
+        <input type="hidden" name="AUTH_FORM" value="Y">
+        <input type="hidden" name="TYPE" value="SEND_PWD">
+
+        <p>Если вы забыли пароль, введите E-Mail, указанный при регистрации.<br>Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.</p>
+        <div class="auth_form__field_wrapper">
+					<span class="custom_input__wrapper">
+						<span class="icon icon-user"></span>
+						<input class="custom_input" placeholder="E-mail" id="email_forgot" name="USER_LOGIN" type="email" value="">
+					</span>
+        </div>
+
+        <div class="auth_form__field_wrapper auth_form__field_wrapper-buttons">
+            <button class="auth_form__submit" type="submit">Выслать пароль</button>
+            <div class="auth_form__register" >Авторизоваться</div>
+        </div>
+
+        <div class="standart_help_box_na marg_btm_10">
+            <div class="grey_text small_text">
+                <div class="auth__error-send auth__state hidden">
+                    Неправильный email
+                </div>
+
+                <div class="auth__succes-send auth__state hidden">
+                    Контрольная строка, а также ваши регистрационные данные были высланы по E-Mail. Пожалуйста, дождитесь прихода письма, так как контрольная строка изменяется при каждом запросе.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth_form__logo-holder">
+        <a href="//www.amocrm.ru"><span class="auth_form__logo"></span></a>
+    </div>
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!--<!doctype html>-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--    <link rel="stylesheet" href="css/settings.css">-->
+<!--    <link rel="stylesheet" href="css/autorization.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="wrapper">-->
+<!--        <div class="wrapp-autorization">-->
+<!--            <div class="autorization-body">-->
+<!--                <div class="logo">-->
+<!--                    LOGO-->
+<!--                </div>-->
+<!--                <form class="form">-->
+<!--                    <div class="form__item">-->
+<!--                        <input type="email" placeholder="Логин">-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <input type="password" placeholder="Пароль">-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <button class="btn btn-login" type="submit">Войти</button>-->
+<!--                        <a class="link link-registration" href="">Регистрация</a>-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <input type="checkbox" id="user-comp">-->
+<!--                        <label for="user-comp">Чужой компьютер</label>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div class="autorization-footer">-->
+<!--                <div class="logo">-->
+<!--                    LOGO-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
